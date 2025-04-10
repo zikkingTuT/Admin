@@ -1,3 +1,18 @@
 spring:
   application:
     name: eleadmin
+--- #---------------------数据库配置---------------------------
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/novel_test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 5211314l
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+# mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zky.eleadmin.domain
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
