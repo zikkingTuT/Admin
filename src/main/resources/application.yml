@@ -1,6 +1,11 @@
 spring:
   application:
     name: eleadmin
+  jackson:
+    date-format: yyyy-MM-dd  HH:mm:ss
+    default-property-inclusion: non_null
+server:
+  port: 8088
 --- #---------------------数据库配置---------------------------
 spring:
   datasource:
