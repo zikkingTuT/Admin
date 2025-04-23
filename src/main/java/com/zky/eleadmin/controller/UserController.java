@@ -94,6 +94,8 @@ public class UserController {
     public UserInfo delete(@RequestBody UserInfo userInfo) {
         System.out.println("格式化用户信息" + JSON.toJSONString(userInfo));
         System.out.println("格式化用户信息" + userInfo);
+        System.out.println("格式化用户信息" + userInfo);
+        System.out.println("格式化用户信息" + userInfo);
         LambdaUpdateWrapper<UserInfo> updateWrapper = new LambdaUpdateWrapper<>();
         updateWrapper.set(UserInfo::getId, userInfo.getId())
                 .set(UserInfo::getStartTime, userInfo.getStartTime())
