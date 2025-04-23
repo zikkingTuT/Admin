@@ -1,6 +1,5 @@
 package com.zky.eleadmin.domain;
 
-import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -19,49 +18,41 @@ public class BookChapter {
      * 
      */
     @TableId(type = IdType.AUTO)
-    @ExcelProperty(value = "id", index = 1)
     private Long id;
 
     /**
      * 小说ID
      */
-    @ExcelProperty(value = "小说ID", index = 2)
     private Long bookId;
 
     /**
      * 章节号
      */
-    @ExcelProperty(value = "章节号", index = 3)
     private Integer chapterNum;
 
     /**
      * 章节名
      */
-    @ExcelProperty(value = "章节名", index = 4)
     private String chapterName;
 
     /**
      * 章节字数
      */
-    @ExcelProperty(value = "章节字数", index = 5)
     private Integer wordCount;
 
     /**
      * 是否收费;1-收费 0-免费
      */
-    @ExcelProperty(value = "是否收费", index = 6)
     private Integer isVip;
 
     /**
      * 
      */
-    @ExcelProperty(value = "创建时间", index = 7)
     private Date createTime;
 
     /**
      * 
      */
-    @ExcelProperty(value = "更新时间", index = 8)
     private Date updateTime;
 
     @Override
