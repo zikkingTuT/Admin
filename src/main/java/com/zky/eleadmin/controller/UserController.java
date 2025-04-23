@@ -74,6 +74,7 @@ public class UserController {
 
         System.out.println("格式化用户信息" + JSON.toJSONString(userInfo));
         System.out.println("格式化用户信息" + userInfo);
+        System.out.println("测试回滚");
         LambdaUpdateWrapper<UserInfo> updateWrapper = new LambdaUpdateWrapper<>();
         updateWrapper.set(UserInfo::getId, userInfo.getId())
                 .set(UserInfo::getStartTime, userInfo.getStartTime())
