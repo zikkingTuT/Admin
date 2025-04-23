@@ -69,8 +69,7 @@ public class UserController {
             currentPage++;
             hasNext = userPage.getRecords().size() == pageSize;
 
-              // 内存优化：清除当前批次对象引用
-              // 内存优化：清除当前批次对象引用
+            // 内存优化：清除当前批次对象引用
             dataList.clear();
             userPage.getRecords().clear();
         }
