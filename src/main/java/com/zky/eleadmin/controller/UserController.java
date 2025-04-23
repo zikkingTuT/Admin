@@ -89,4 +89,23 @@ public class UserController {
         return userInfoService.getOne(queryWrapper);
 
     }
+    @PostMapping("/delete")
+    public UserInfo delete(@RequestBody UserInfo userInfo) {
+        System.out.println("格式化用户信息" + JSON.toJSONString(userInfo));
+        System.out.println("格式化用户信息" + userInfo);
+        LambdaUpdateWrapper<UserInfo> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.set(UserInfo::getId, userInfo.getId())
+                .set(UserInfo::getStartTime, userInfo.getStartTime())
+                .set(UserInfo::getUserPhoto, userInfo.getUserPhoto());
+        userInfoService.getBaseMapper().delete(updateWrapper);
+        if (Objects.isNull(userInfo.getStartTime())) {
+            userInfo.setStartTime(null);
+        }
+        QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("id", userInfo.getId());
+        return userInfoService.getOne(queryWrapper);
+
+    }
+
+
 }
